@@ -1,0 +1,35 @@
+[
+  {
+    "t": "工作台",
+    "class": "fa-file-text",
+    "url": "Action/index"
+  },
+  {
+    "t": "平台管理",
+    "class": "fa-file-text",
+    "url": "",
+    "child": [
+      {
+        "t": "平台列表",
+        "url": "product/listPage"
+      }
+
+    ]
+  },
+  {
+    "t": "权限管理",
+    "class": "fa-cog",
+    "url": "",
+    "child": [
+      {
+        "t": "用户列表",
+        "url": "Admin/userList"
+      },
+      {
+        "t": "组织机构",
+        "url": "Admin/roleList"
+      }
+    ]
+  }
+
+]
