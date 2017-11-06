@@ -116,7 +116,7 @@ var localFun = {
         $.each($(".star"), function (a, b) {
             if ($(this).find("b").text() == 0) {
                 $(this).find("i").eq(idx).css({
-                    "background": "url('../static/Main/img/starBig1.png')",
+                    "background": "url('/static/Main/img/starBig1.png')",
                     "background-size": "100% 100%"
                 });
             } else {
@@ -124,21 +124,21 @@ var localFun = {
                 if (!reg.test(Number($(this).find("b").text()))) {
                     var zIdx = Math.floor($(this).find("b").text());
                     $(this).find("i").eq(zIdx).prevAll("i").css({
-                        "background": "url('../static/Main/img/starBig3.png')",
+                        "background": "url('/static/Main/img/starBig3.png')",
                         "background-size": "100% 100%"
                     });
                     $(this).find("i").eq(zIdx).css({
-                        "background": "url('../static/Main/img/starBig2.png')",
+                        "background": "url('/static/Main/img/starBig2.png')",
                         "background-size": "100% 100%"
                     });
                 } else {
                     var idx = Number($(this).find("b").text()) - 1;
                     $(this).find("i").eq(idx).prevAll("i").css({
-                        "background": "url('../static/Main/img/starBig3.png')",
+                        "background": "url('/static/Main/img/starBig3.png')",
                         "background-size": "100% 100%"
                     });
                     $(this).find("i").eq(idx).css({
-                        "background": "url('../static/Main/img/starBig3.png')",
+                        "background": "url('/static/Main/img/starBig3.png')",
                         "background-size": "100% 100%"
                     });
                 }
@@ -150,7 +150,7 @@ var localFun = {
         var message_noticeIs = $.cookie('message_notice') || '';
         if (message_noticeIs != 'false') {
             $(".message").css({
-                "background": 'url("../static/Main/img/xiaoxi1@3x.png")',
+                "background": 'url("/static/Main/img/xiaoxi1@3x.png")',
                 "background-size": 100 + '%' + 100 + '%'
             });
         };
@@ -339,7 +339,7 @@ $.extend({
             } else {
                 notLogin();
                 local.login_reffer = window.location.href;
-                window.location.href = "/html/login.html";
+                window.location.href = "/mobile/index.php/login";
             }
         })
     },

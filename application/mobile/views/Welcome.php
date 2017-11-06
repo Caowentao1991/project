@@ -65,8 +65,8 @@
             <!--下方图文导航-->
             <div class="btnImg">
                 <div>
-                    <a href="http://m.sudaizhijia.com/html/product.html"><img src="<?=base_url();?>static/Main/img/btnImg1.png" alt=""></a>
-                    <a href="http://event.sudaizhijia.com/m/sudai300.1/index.html"><img src="<?=base_url();?>static/Main/img/btnImg3.png" alt=""></a>
+                    <a href="/mobile/index.php/product"><img src="<?=base_url();?>static/Main/img/btnImg1.png" alt=""></a>
+                    <a href="/mobile/index.php/product"><img src="<?=base_url();?>static/Main/img/btnImg3.png" alt=""></a>
                     <a href="javascript:;" onclick="alert('敬请期待')"><img src="<?=base_url();?>static/Main/img/btnImg2.png" alt=""></a>
                     <a href="javascript:;" onclick="alert('敬请期待')"><img src="<?=base_url();?>static/Main/img/btnImg4.png" alt=""></a>
                 </div>
@@ -116,7 +116,7 @@
             </a>
         </dl>
         <dl>
-            <a href="http://m.sudaizhijia.com/html/product.html" name="navtab"> <dt></dt>
+            <a href="index.php/Product" name="navtab"> <dt></dt>
                 <dd>速贷大全</dd>
             </a>
         </dl>
@@ -125,11 +125,11 @@
 <!--                <dd>论坛</dd>-->
 <!--            </a>-->
 <!--        </dl>-->
-<!--        <dl class="mine">-->
-<!--            <a href="http://m.sudaizhijia.com/html/mine.html" name="navtab"> <dt></dt>-->
-<!--                <dd>我的</dd>-->
-<!--            </a>-->
-<!--        </dl>-->
+        <dl class="mine">
+            <a href="index.php/Mine" name="navtab"> <dt></dt>
+                <dd>我的</dd>
+            </a>
+        </dl>
     </footer>
 </div>
 <script src="<?=base_url();?>static/Main/js/jquery.min.js?<?=time();?>"></script>

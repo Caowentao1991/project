@@ -395,7 +395,7 @@ var productResultController = {
             if (b.user_photo != '') {
                 html += "<img src=" + b.user_photo + ">";
             } else {
-                html += "<img src='../img/sudaidai.png'>";
+                html += "<img src='/static/Main/img/sudaidai.png'>";
             }
             html += "</div>" +
                 "<div class='right'>" +
@@ -464,7 +464,7 @@ var productResultController = {
             if (b.user_photo != '') {
                 html += "<img src=" + b.user_photo + ">";
             } else {
-                html += "<img src='../img/sudaidai.png'>";
+                html += "<img src='/static/Main/img/sudaidai.png'>";
             }
             html += "</div>" +
                 "<div class='right'>" +

@@ -88,7 +88,7 @@ $.ajaxSetup({
                 content: '登录信息失效，请重新登录',
                 callback: function () {
                     localStorage.clear();
-                    window.location.href = "/html/login.html";
+                    window.location.href = "/mobile/index.php/login";
                 }
             })
 

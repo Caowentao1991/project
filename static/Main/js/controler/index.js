@@ -23,7 +23,7 @@ var indexController = {
             var base = new $.Base64();
             var result = base.decode(url);
             var result_local = JSON.parse(result);
-            local.userId = result_local.sd_user_id;
+            local.userId = result_local.custNo;
             local.indent = result_local.indent;
             local.username = result_local.username;
             local.phone = result_local.mobile;
@@ -42,7 +42,7 @@ var indexController = {
             local.screenMoneyIdx = $("option:selected").index();
             local.screenMoney = moneys;
             local.screenShowMoney = $(this).next("b").text();
-            window.location.href = "/html/product.html"
+            window.location.href = "/mobile/index.php/product"
         });
 
     },
@@ -157,7 +157,7 @@ var indexController = {
         //点击产品跳转
         $(".terrace_list").on('click', function () {
             var productId = $(this).data('id');
-            window.location.href = "/html/product_result.html?productId=" + productId
+            window.location.href = "index.php/product/result?productId=" + productId
         })
     },
     /*登录统计*/

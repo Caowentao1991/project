@@ -5,7 +5,11 @@ class Login extends CI_Controller {
 
     public function index()
     {
-
         $this->load->view('login');
+    }
+
+    public function loginQuick(){
+
+        $this->load->view('login/loginQuick');
     }
 }

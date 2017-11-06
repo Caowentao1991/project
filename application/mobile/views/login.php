@@ -120,7 +120,7 @@
                     <input type="number" id="phone_zhang" class="input" placeholder="输入手机号" onfocus="this.placeholder=''" onblur="if(this.placeholder=='') this.placeholder='请输入手机号' " oninput="if(value.length>11)value=value.slice(0,11)"><span class="phone_x"></span> </p>
                 <p class="login_zhang_p2 login_zhang">
                     <input type="password" id="password" class="input" placeholder="6-20位密码" onfocus="this.placeholder=''" onblur="if(this.placeholder=='') this.placeholder='6-20位密码' "><span class="phone_x"></span><span class="pwd_yan" style="cursor:pointer;"></span></p> <span class="btn btn_two" id="btn">登录</span>
-                <p class="href_p"><a href="login.html">免注册登录</a> &nbsp;|&nbsp; <a href="forgetPhone.html" class="forget" style="color:#0064ff">忘记密码</a></p>
+                <p class="href_p"><a href="/mobile/index.php/login">免注册登录</a> &nbsp;|&nbsp; <a href="forgetPhone.html" class="forget" style="color:#0064ff">忘记密码</a></p>
             </div>
         </div>
     </section>

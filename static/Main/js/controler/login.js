@@ -207,14 +207,14 @@ var loginController = {
     doSmsLoginView: function () {
         var that = this;
         service.doAjaxRequest({
-            url: '/v1/sms/register',
+            url: '/sms/register',
             type: 'POST',
             data: {
                 "mobile": $(".phone").val()
             }
         }, function (json) {
             local.codesign = json.sign;
-            window.location.href = "/html/loginQuick.html";
+            window.location.href = "/mobile/index.php/login/loginQuick";
         }, function (json) {
             $.popupCover({
                 content: json.error_message
@@ -235,7 +235,7 @@ var loginController = {
         }, function (obj) {
             alert(1)
             //cnzz_TrackEvent('wap', '用户登录', '账号密码登录', '');
-            local.userId = obj.sd_user_id;
+            local.userId = obj.custNo;
             local.indent = obj.indent;
             local.username = obj.user_name;
             local.phone = obj.mobile;
@@ -256,7 +256,7 @@ var loginController = {
                         window.location.href = "/index.html"
                     }
                 } else {
-                    window.location.href = "mine_change_indent.html"
+                    window.location.href = "/mobile/index.php/mine/mine_change_indent"
                 }
             }
         }, function (json) {
