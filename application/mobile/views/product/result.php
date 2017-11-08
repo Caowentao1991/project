@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- 添加到主屏后的标题（iOS 6 新增） -->
-    <meta name="apple-mobile-web-app-title" content="速贷之家">
+    <meta name="apple-mobile-web-app-title" content="链客">
     <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- 设置苹果工具栏颜色 -->
@@ -16,9 +16,9 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <meta name="keywords" content="速贷之家,极速贷款,快速贷款、快速分期一站式智能搜索比价平台,帮助借款人选择最适合他的借款方案" />
+    <meta name="keywords" content="链客,极速贷款,快速贷款、快速分期一站式智能搜索比价平台,帮助借款人选择最适合他的借款方案" />
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <title>速贷之家-产品详情</title>
+    <title>链客-产品详情</title>
     <script src="<?=base_url();?>static/Main/js/htmlrem.min.js"></script>
 
     <link rel="stylesheet" href="<?=base_url();?>static/Main/css/reset.css" />

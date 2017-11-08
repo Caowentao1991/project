@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- 添加到主屏后的标题（iOS 6 新增） -->
-    <meta name="apple-mobile-web-app-title" content="速贷之家">
+    <meta name="apple-mobile-web-app-title" content="链客">
     <!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- 设置苹果工具栏颜色 -->
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?=base_url();?>static/Main/css/swiper.min.css" />
     <link rel="stylesheet" href="<?=base_url();?>static/Main/css/index.css">
     <link rel="stylesheet" href="<?=base_url();?>static/Main/css/styleSpan.css">
-    <title>极速贷款,上速贷之家</title>
+    <title>极速贷款,上链客</title>
 </head>
 
 <body>
@@ -63,13 +63,14 @@
         <div id="thelist">
             <div id="PullDown" class="scroller-pullDown"><img src="<?=base_url();?>static/Main/img/rolling.svg" />&nbsp;&nbsp;<span id="pullDown-msg" class="pull-down-msg">下拉刷新</span></div>
             <!--下方图文导航-->
-            <div class="btnImg">
-                <div>
-                    <a href="/mobile/index.php/product"><img src="<?=base_url();?>static/Main/img/btnImg1.png" alt=""></a>
-                    <a href="/mobile/index.php/product"><img src="<?=base_url();?>static/Main/img/btnImg3.png" alt=""></a>
-                    <a href="javascript:;" onclick="alert('敬请期待')"><img src="<?=base_url();?>static/Main/img/btnImg2.png" alt=""></a>
-                    <a href="javascript:;" onclick="alert('敬请期待')"><img src="<?=base_url();?>static/Main/img/btnImg4.png" alt=""></a>
+            <div class="touchImg">
+                <div class="swiper-container" id="newSelected">
+                    <div class="swiper-wrapper newSelected">
+                    </div>
+
+                    <div class="swiper-scrollbar" style=""></div>
                 </div>
+
             </div>
             <!--推荐产品-->
             <div class="recommend" style="margin: 0 auto .1rem">
@@ -83,7 +84,7 @@
 <!--                <div class="swiper-container" id="newSelected">-->
 <!--                    <div class="swiper-wrapper newSelected">-->
 <!--                    </div>-->
-<!--                    <!-- Add Scrollbar -->
+<!--                    Add Scrollbar-->
 <!--                    <div class="swiper-scrollbar" style=""></div>-->
 <!--                </div>-->
 <!---->
@@ -93,9 +94,9 @@
 <!--                <div class="themes_imgbox"></div>-->
 <!--            </div>-->
             <!--速贷攻略-->
-<!--            <div class="strategyBanner">-->
-<!--                <a href="http://m.sudaizhijia.com/html/strategy.html"><img src="--><?//=base_url();?><!--static/Main/img/banner@3x.png" alt=""></a>-->
-<!--            </div>-->
+            <div class="strategyBanner">
+                <a href="#"><img src="<?=base_url();?>static/Main/img/banner@3x.png" alt=""></a>
+            </div>
             <!--新品入驻-->
             <div class="new_terrace">
                 <h3 class="themes_h3">新品入驻<img src="<?=base_url();?>static/Main/img/!@3x.png" class="promptBtn" id="new_Btn"></h3>

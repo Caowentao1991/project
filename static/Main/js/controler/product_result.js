@@ -325,7 +325,7 @@ var productResultController = {
         myScroll.refresh();
         $('.tishi').click(function () {
             $.popupCover({
-                content: "基于速贷之家千万借款用户真实评论生成!"
+                content: "基于链客千万借款用户真实评论生成!"
             });
         });
         // productResultController.doWxView();
@@ -826,8 +826,8 @@ var productResultController = {
             },
             error: function () {}
         });
-        var _title = $(".productName").text() + "-速贷之家",
-            _desc = '全网速审,实战攻略,免息红包,上速贷之家!',
+        var _title = $(".productName").text() + "-链客",
+            _desc = '全网速审,实战攻略,免息红包,上链客!',
             _link = window.location.href,
             _imgUrl = m_sudaizhijia_host + '/img/sudai_logo.png';
 

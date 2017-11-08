@@ -47,7 +47,7 @@ class Product extends CI_Controller {
             $result['data'][$key]['product_introduct']      = $value['product_introduct'];
             $result['data'][$key]['update_date']            = date('m',strtotime($value['create_time'])).'月'.date('d',strtotime($value['create_time'])).'日';
             $result['data'][$key]['tag_name']               = $this->tag->get_all(['id in '.$value['tag_name']]);
-            $result['data'][$key]['product_conduct']        = '通过筛选，成功入驻速贷之家';
+            $result['data'][$key]['product_conduct']        = '通过筛选，成功入驻链客';
         }
 
         echo json_encode($result);
