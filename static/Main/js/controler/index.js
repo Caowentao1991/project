@@ -13,7 +13,7 @@ var indexController = {
         this.initSearchView();
         this.initPromotionQuestionView();
         this.scrollEvent.init(myScroll);
-        this.countVisit();
+        // this.countVisit();
     },
     /*base64解密微信授权登录*/
     initBaseView: function () {
@@ -161,26 +161,26 @@ var indexController = {
         })
     },
     /*登录统计*/
-    countVisit: function () {
-        var that = this;
-        if (localStorage.userId) {
-            //统计访问用户量
-            service.doAjaxRequest({
-                url: '/data/activeuser',
-                type: 'POST',
-                data: {}
-            }, function (json) {});
-            //统计定位信息
-            var locationCookie = $.cookie('homePage_location') || '';
-            if (locationCookie == '') {
-                $.cookie('homePage_location', 'false', {
-                    expires: 7,
-                    path: '/'
-                });
-                that.doLocationView.initView();
-            }
-        };
-    },
+    // countVisit: function () {
+    //     var that = this;
+    //     if (localStorage.userId) {
+    //         //统计访问用户量
+    //         service.doAjaxRequest({
+    //             url: '/data/activeuser',
+    //             type: 'POST',
+    //             data: {}
+    //         }, function (json) {});
+    //         //统计定位信息
+    //         var locationCookie = $.cookie('homePage_location') || '';
+    //         if (locationCookie == '') {
+    //             $.cookie('homePage_location', 'false', {
+    //                 expires: 7,
+    //                 path: '/'
+    //             });
+    //             that.doLocationView.initView();
+    //         }
+    //     };
+    // },
     //scroll滑动事件
     scrollEvent: {
         myScroll: null,
@@ -259,67 +259,67 @@ var indexController = {
         }
     },
     //登录定位统计
-    doLocationView: {
-        initView: function () {
-            var that = this;
-            this.doAddressView();
-        },
-        //定位功能
-        doAddressView: function () {
-            var map, geolocation;
-            //加载地图，调用浏览器定位服务
-            map = new AMap.Map('', {
-                resizeEnable: true
-            });
-            map.plugin('AMap.Geolocation', function () {
-                geolocation = new AMap.Geolocation({
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    buttonPosition: 'RB'
-                });
-                map.addControl(geolocation);
-                geolocation.getCurrentPosition();
-                AMap.event.addListener(geolocation, 'complete', onComplete);
-                AMap.event.addListener(geolocation, 'error', onError);
-            });
-            //解析定位结果
-            function onComplete(data) {
-                longitude = data.position.getLng();
-                latitude = data.position.getLat();
-                gpsPoint = new BMap.Point(longitude, latitude);
-                BMap.Convertor.translate(gpsPoint, 0, translateCallback);
-            }
-            translateCallback = function (point) {
-                baiduPoint = point;
-                var geoc = new BMap.Geocoder();
-                geoc.getLocation(baiduPoint, getCityByBaiduCoordinate);
-            }
-
-            function getCityByBaiduCoordinate(rs) {
-                baiduAddress = rs.addressComponents;
-                var userAddress = baiduAddress.city + baiduAddress.district + baiduAddress.street + baiduAddress.streetNumber;
-                var userCity = baiduAddress.city;
-                local.sd_positionmessage = userCity;
-                /*11.1.2地域定位统计*/
-                var lonLat = longitude + ',' + latitude;
-                service.doAjaxRequest({
-                    url: '/location/device',
-                    type: 'POST',
-                    async: false,
-                    data: {
-                        "deviceId": $.cookie('sd_equipment_id'),
-                        "userCity": userCity,
-                        "userAddress": userAddress,
-                        "lonLat": lonLat,
-                        "areaId": '0',
-                        "locationType": '2'
-                    }
-                })
-            }
-            //解析定位错误信息
-            function onError(data) {}
-        }
-    }
+    // doLocationView: {
+    //     initView: function () {
+    //         var that = this;
+    //         this.doAddressView();
+    //     },
+    //     //定位功能
+    //     doAddressView: function () {
+    //         var map, geolocation;
+    //         //加载地图，调用浏览器定位服务
+    //         map = new AMap.Map('', {
+    //             resizeEnable: true
+    //         });
+    //         map.plugin('AMap.Geolocation', function () {
+    //             geolocation = new AMap.Geolocation({
+    //                 enableHighAccuracy: true,
+    //                 timeout: 10000,
+    //                 buttonPosition: 'RB'
+    //             });
+    //             map.addControl(geolocation);
+    //             geolocation.getCurrentPosition();
+    //             AMap.event.addListener(geolocation, 'complete', onComplete);
+    //             AMap.event.addListener(geolocation, 'error', onError);
+    //         });
+    //         //解析定位结果
+    //         function onComplete(data) {
+    //             longitude = data.position.getLng();
+    //             latitude = data.position.getLat();
+    //             gpsPoint = new BMap.Point(longitude, latitude);
+    //             BMap.Convertor.translate(gpsPoint, 0, translateCallback);
+    //         }
+    //         translateCallback = function (point) {
+    //             baiduPoint = point;
+    //             var geoc = new BMap.Geocoder();
+    //             geoc.getLocation(baiduPoint, getCityByBaiduCoordinate);
+    //         }
+    //
+    //         function getCityByBaiduCoordinate(rs) {
+    //             baiduAddress = rs.addressComponents;
+    //             var userAddress = baiduAddress.city + baiduAddress.district + baiduAddress.street + baiduAddress.streetNumber;
+    //             var userCity = baiduAddress.city;
+    //             local.sd_positionmessage = userCity;
+    //             /*11.1.2地域定位统计*/
+    //             var lonLat = longitude + ',' + latitude;
+    //             service.doAjaxRequest({
+    //                 url: '/location/device',
+    //                 type: 'POST',
+    //                 async: false,
+    //                 data: {
+    //                     "deviceId": $.cookie('sd_equipment_id'),
+    //                     "userCity": userCity,
+    //                     "userAddress": userAddress,
+    //                     "lonLat": lonLat,
+    //                     "areaId": '0',
+    //                     "locationType": '2'
+    //                 }
+    //             })
+    //         }
+    //         //解析定位错误信息
+    //         function onError(data) {}
+    //     }
+    // }
 };
 $(function () {
     indexController.initView();

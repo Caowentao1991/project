@@ -54,11 +54,13 @@ var changemima2Controller = {
     //修改密码发送短信验证码
     doChangePasswordView: function () {
         var that = this;
+        var id   = $('#id').val();
         service.doAjaxRequest({
                 url: "/sms/password",
                 type: "POST",
                 data: {
-                    "mobile": localStorage.phone
+                    "mobile": localStorage.phone,
+                    "id"    : id
                 },
             },
             function (obj) {

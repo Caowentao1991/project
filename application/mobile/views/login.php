@@ -131,7 +131,7 @@
 <script src="<?=base_url();?>static/Main/js/geetest.min.js"></script>
 <script src="<?=base_url();?>static/Main/js/jquery.md5.js"></script>
 <script src="<?=base_url();?>static/Main/js/controler/global.js"></script>
-<script src="<?=base_url();?>static/Main/js/controler/login.js"></script>
+<script src="<?=base_url();?>static/Main/js/controler/login.js?<?=time();?>"></script>
 <script src="<?=base_url();?>static/Main/js/statistics.js"></script>
 </body>
 

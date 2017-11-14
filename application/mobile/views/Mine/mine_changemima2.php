@@ -93,6 +93,7 @@
             <input type="text" class="" placeholder="请输入验证码" onfocus="this.placeholder=''" onblur="if(this.placeholder=='') this.placeholder='请输入验证码' "> <span style="color: #44b7f7" class="clock">获取验证码</span> </div> <span class="btn">确定</span> </section>
     <!--底部-->
     <footer> 极速贷款，上链客 </footer>
+    <input type="hidden" id="id" value="<?=$id;?>">
 </div>
 <script src="<?=base_url();?>static/Main/js/jquery.min.js"></script>
 <script src="<?=base_url();?>static/Main/js/geetest.min.js"></script>

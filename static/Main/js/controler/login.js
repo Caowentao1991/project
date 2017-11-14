@@ -233,7 +233,6 @@ var loginController = {
                 "version": 3
             }
         }, function (obj) {
-            alert(1)
             //cnzz_TrackEvent('wap', '用户登录', '账号密码登录', '');
             local.userId = obj.custNo;
             local.indent = obj.indent;
@@ -253,7 +252,7 @@ var loginController = {
                             window.location.href = reffer + '?fromLogin=1';
                         }
                     } else {
-                        window.location.href = "/index.html"
+                        window.location.href = "/mobile/index.php"
                     }
                 } else {
                     window.location.href = "/mobile/index.php/mine/mine_change_indent"

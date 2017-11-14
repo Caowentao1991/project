@@ -44,7 +44,7 @@ class Sms extends CI_Controller {
     }
 
     public function password(){
-       var_dump($_POST);die;
+        var_dump($_POST);die;
     }
 
 }

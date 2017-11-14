@@ -23,8 +23,8 @@ class Mine extends CI_Controller {
         $this->load->view('Mine/mine_aboutour');
     }
     public function Mine_changemima2(){
-
-        $this->load->view('Mine/mine_changemima2');
+        $id = $_COOKIE['userId'];
+        $this->load->view('Mine/mine_changemima2',['id'=>$id]);
     }
 
     public function Cooperation(){

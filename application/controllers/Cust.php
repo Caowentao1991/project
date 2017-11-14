@@ -39,7 +39,7 @@ class Cust extends CI_Controller
 
 
     public function info(){
-        $custNo   = $_COOKIE['userId'];
+        $custNo   = isset($_COOKIE['userId']) ? $_COOKIE['userId'] : '';
         if(empty($custNo)){
             header('HTTP/1.1 401 Unauthorized');
             $result['code']     = 401;
