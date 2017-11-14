@@ -56,7 +56,7 @@ var indexController = {
         });
         $('#new_Btn').on('click', function () {
             $.promptCover({
-                content: "速贷之家为全国最大速贷新品首发平台！您可到速贷大全－排序查看最新产品！"
+                content: "链客为全国最大速贷新品首发平台！您可到速贷大全－排序查看最新产品！"
             });
         });
     },
