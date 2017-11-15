@@ -6,6 +6,7 @@ class Auth extends CI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->library('session');
+        $this->load->library('AES');
     }
 
     public function Login(){
@@ -67,17 +68,17 @@ class Auth extends CI_Controller
         try{
             $this->load->model('Sms_model','sms');
             $this->load->model('Cust_model','cust');
-            if($post['sign'] != md5($post['mobile'])){
+            if($post['sign'] != $this->aes->key16aes128ecbDecrypt($post['mobile'])){
                 $result['error_code'] = '9999';
                 throw new Exception('验签失败');
             }
-            $one = $this->sms->get_one(['verifyCode'=>$post['code'],'mobile'=>$post['mobile'],'status'=>'0']);
+            $one = $this->sms->get_one(['verifyCode'=>$post['code'],'mobile'=>$post['mobile'],'status'=>'0','type'=>'1']);
 
             if(empty($one)){
                 $result['error_code'] = '9998';
                 throw new Exception('验证码错误');
             }else{
-                $this->sms->update(['status'=>1],['verifyCode'=>$post['code'],'mobile'=>$post['mobile']]);
+                $this->sms->update(['status'=>1],['verifyCode'=>$post['code'],'mobile'=>$post['mobile'],'type'=>'1']);
                 $custinfo = $this->cust->get_one(['user_name'=>$post['mobile']]);
                 if(empty($custinfo)){
                     if($this->cust->insert(['user_name'=>$post['mobile'],'mobile'=>$post['mobile'],'login_date'=>date('Y-m-d'),'accessToken'=>md5($post['mobile'].time())])){
